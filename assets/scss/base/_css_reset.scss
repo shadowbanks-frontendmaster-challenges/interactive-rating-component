@@ -5,3 +5,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+/* Resetting h1-h6 headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+button {
+  all: unset; /* Resets all default styles */
+  display: inline-block; /* Make sure the button behaves as an inline element */
+  cursor: pointer; /* Ensures the button looks clickable */
+}

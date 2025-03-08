@@ -1,0 +1,201 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Resetting h1-h6 headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+button {
+  all: unset; /* Resets all default styles */
+  display: inline-block; /* Make sure the button behaves as an inline element */
+  cursor: pointer; /* Ensures the button looks clickable */
+}
+
+html {
+  min-width: 20rem;
+}
+
+body {
+  background-color: hsl(216, 12%, 8%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 1.5rem;
+  font-family: "Overpass", sans-serif;
+  font-size: 15px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(213, 19%, 18%);
+  border-radius: 1rem;
+  padding: 1.2rem 1rem;
+  font-weight: 400;
+  min-height: 22rem;
+  max-width: 24rem;
+}
+main .hidden {
+  display: none;
+}
+main .active {
+  display: flex;
+  flex-direction: column;
+}
+main .rating {
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.rating .star-icon {
+  border-radius: 50%;
+  padding: 0.5rem;
+  background-color: hsl(213, 19%, 22%);
+  margin-bottom: 1.3rem;
+}
+.rating h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.7rem;
+}
+.rating p {
+  line-height: 1.5rem;
+  color: hsl(217, 12%, 63%);
+}
+.rating .rating-container {
+  padding: 1.3rem 0;
+  position: relative;
+  width: 100%;
+}
+.rating .rating-container .err {
+  display: none;
+}
+.rating .rating-container .err.active {
+  display: block;
+  position: absolute;
+  color: red;
+  font-size: 0.8rem;
+  top: 0;
+  right: 0;
+}
+.rating .rating-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.rating .rating-buttons .rate-score {
+  background-color: hsl(213, 19%, 22%);
+  border-radius: 50%;
+  padding: 0.5rem;
+  color: hsl(217, 12%, 63%);
+  height: 1.6rem;
+  width: 1.6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.rating .rating-buttons .rate-score.active {
+  background-color: hsl(0, 0%, 100%);
+  color: hsl(216, 12%, 8%);
+}
+.rating .submit {
+  width: 100%;
+  background-color: hsl(25, 97%, 53%);
+  color: hsl(216, 12%, 8%);
+  border-radius: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.7rem 0;
+}
+.rating .submit:hover {
+  background-color: hsl(0, 0%, 100%);
+}
+
+.thank-you {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.thank-you .thank-you-image {
+  width: 9rem;
+  height: 6.2rem;
+  margin-bottom: 1.2rem;
+}
+.thank-you .final-score {
+  background-color: hsl(213, 19%, 22%);
+  padding: 0.3rem 0.5rem;
+  border-radius: 1rem;
+  color: hsl(25, 97%, 53%);
+  margin-bottom: 1.5rem;
+}
+.thank-you h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.thank-you p {
+  line-height: 1.5rem;
+  color: hsl(217, 12%, 63%);
+  text-align: center;
+}
+
+@media (min-width: 30rem) {
+  main {
+    height: 24rem;
+    padding: 1.2rem;
+  }
+  .rating .star-icon {
+    margin-bottom: 1.2rem;
+  }
+  .rating-container {
+    padding: 1.5rem 0;
+  }
+}
+@media (min-width: 38rem) {
+  main {
+    height: 25rem;
+    padding: 1.8rem;
+    max-width: 25rem;
+    border-radius: 1.5rem;
+  }
+  .rating {
+    padding: 0;
+  }
+  .rating .star-icon {
+    margin-bottom: 2.2rem;
+  }
+  .rating .rating-container {
+    padding: 1.5rem 0;
+  }
+  .rating .rating-buttons .rate-score:hover {
+    background-color: hsl(25, 97%, 53%);
+  }
+  .rating .rating-buttons .rate-score {
+    padding: 0.6rem;
+    height: 1.8rem;
+    width: 1.8rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

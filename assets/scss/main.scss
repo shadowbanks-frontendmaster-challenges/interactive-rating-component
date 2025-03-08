@@ -1,4 +1,4 @@
-@use "./main.scss";
+@use "./base/css_reset";
 @use "./mixin/media_queries" as mq;
 
 // Primary colors
@@ -10,8 +10,192 @@ $Light-Grey: hsl(217, 12%, 63%);
 $Dark-Blue: hsl(213, 19%, 18%);
 $Very-Dark-Blue: hsl(216, 12%, 8%);
 
+$custom: hsl(213, 19%, 22%);
+
 $font: 15px;
 $font-family: "Overpass", sans-serif;
 $weight-1: 400;
 $weight-2: 700;
 
+html {
+  min-width: 20rem;
+}
+
+body {
+  background-color: $Very-Dark-Blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 0 1.5rem;
+  font-family: $font-family;
+  font-size: $font;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  color: $White;
+  background-color: $Dark-Blue;
+  border-radius: 1rem;
+  padding: 1.2rem 1rem;
+  font-weight: $weight-1;
+  min-height: 22rem;
+  max-width: 24rem;
+  .hidden {
+    display: none;
+  }
+  .active {
+    display: flex;
+    flex-direction: column;
+  }
+  .rating {
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
+
+.rating {
+  .star-icon {
+    border-radius: 50%;
+    padding: 0.5rem;
+    // box-shadow: 0 0 0 1px $Dark-Blue;
+    background-color: $custom;
+    margin-bottom: 1.3rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    font-weight: $weight-2;
+    margin-bottom: 0.7rem;
+  }
+  p {
+    line-height: 1.5rem;
+    color: $Light-Grey;
+  }
+  .rating-container {
+    padding: 1.3rem 0;
+    position: relative;
+    width: 100%;
+    .err {
+      display: none;
+    }
+    .err.active {
+      display: block;
+      position: absolute;
+      color: red;
+      font-size: 0.8rem;
+      top: 0;
+      right: 0;
+    }
+  }
+  .rating-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    .rate-score {
+      background-color: $custom;
+      border-radius: 50%;
+      padding: 0.5rem;
+      color: $Light-Grey;
+      height: 1.6rem;
+      width: 1.6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    .rate-score.active {
+      background-color: $White;
+      color: $Very-Dark-Blue;
+    }
+  }
+  .submit {
+    width: 100%;
+    background-color: $Orange;
+    color: $Very-Dark-Blue;
+    border-radius: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: $weight-1;
+    padding: 0.7rem 0;
+  }
+  .submit:hover {
+    background-color: $White;
+  }
+}
+
+.thank-you {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .thank-you-image {
+    width: 9rem;
+    height: 6.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .final-score {
+    background-color: $custom;
+    padding: 0.3rem 0.5rem;
+    border-radius: 1rem;
+    color: $Orange;
+    margin-bottom: 1.5rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+    font-weight: $weight-2;
+    margin-bottom: 0.5rem;
+  }
+  p {
+    line-height: 1.5rem;
+    color: $Light-Grey;
+    text-align: center;
+  }
+}
+
+@include mq.respond(tablet) {
+  $font: 18px;
+  main {
+    height: 24rem;
+    padding: 1.2rem;
+  }
+  .rating {
+    .star-icon {
+      margin-bottom: 1.2rem;
+    }
+  }
+  .rating-container {
+    padding: 1.5rem 0;
+  }
+}
+@include mq.respond(desktop) {
+  $font: 20px;
+  main {
+    height: 25rem;
+    padding: 1.8rem;
+    max-width: 25rem;
+    border-radius: 1.5rem;
+  }
+  .rating {
+    padding: 0;
+    .star-icon {
+      margin-bottom: 2.2rem;
+    }
+    .rating-container {
+      padding: 1.5rem 0;
+    }
+    .rating-buttons {
+      .rate-score:hover {
+        background-color: $Orange;
+      }
+      .rate-score {
+        padding: 0.6rem;
+        height: 1.8rem;
+        width: 1.8rem;
+      }
+    }
+  }
+}

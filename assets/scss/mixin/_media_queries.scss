@@ -1,6 +1,6 @@
-$breakpoint-mobile: 40rem;
-$breakpoint-tablet: 60rem;
-$breakpoint-desktop: 100rem;
+$breakpoint-mobile: 30rem;
+$breakpoint-tablet: 38rem;
+$breakpoint-desktop: 46rem;
 
 @mixin respond($breakpoint) {
   @if $breakpoint == tablet {
